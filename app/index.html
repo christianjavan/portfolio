@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="css/stylesheet.css" media="screen" title="no title">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  </head>
+  <body>
+
+    <header class="header" id="header">
+      <span class="bg"></span>
+      <section class="title">
+        <h1 class="name">Christian Javan</h1>
+        <p>Front End Developer</p>
+
+      </section>
+    </header>
+
+    <main id="app">
+      <section class="grid-12-center-middle presentation ">
+        <section class="col-10 v-card--text">
+          <p>
+            Mi nombre es <b class="">Christian Javan</b>. Soy Desarrollador Front End. Domino <b>HTML</b>, <b>CSS3</b> y <b>JavaScript</b>.
+          </p>
+          <div class="arrow">&#10092;</div>
+        </section>
+      </section>
+
+      <section class="portfolio grid">
+
+        <portfolio-items :projects="all.projects"><portfolio-items>
+      </section>
+
+      <section class="grid-middle v-card">
+        <section class="col-10 v-card--personal">
+          <h3>Datos Personales</h3>
+          <h2>Christian Javan Hernandez Juandiego</h2>
+          <p>Ingeniero en Computacion</p>
+          <p>29 años</p>
+        </section>
+        <section class="col-10 v-card--estudios">
+          <h3>Estudios</h3>
+          <h2>Universidad Autonoma de Baja California <span>Ingenieria en Computacion</span></h2>
+          <h2>Universidad del Pacifico <span>Curso de Android</span></h2>
+        </section>
+        <section class="col-10 v-card--experiencia">
+          <h3>Experiencia Laboral</h3>
+          <h2>Global Trade Logistics <span>Auxiliar de Sistemas</span></h2>
+          <p>
+            En este puesto me desempeñe en todas las areas de las Tecnologias de la información. Administracion de redes y telefonia, bases de datos, mantenimiento de servidores, creacion de aplicaciones de escritorio (Windows) y aplicaciones web (PHP/MySQL) y Frontend (HTML/CSS/Javascript).
+          </p>
+          <h2 style="margin-top:16px;">Elemental IT <span>Consultor Informatico</span></h2>
+          <p>Aquí desempeñe funciones similares pero con mayor enfoque al desarrollo de software.</p>
+        </section>
+      </section>
+    </main>
+    <footer>
+
+    </footer>
+    <div style="height:50px;"></div>
+    <contact-form  id="email">
+      <p onclick="openEmailForm()">
+        Contactame! Mandame un email!
+      </p><span id="+" class="close-form" onclick="closeEmailForm()">&#10005;</span>
+      <section class="inputs">
+        <form class="" action="" method="">
+          <input type="text" name="name" placeholder="Tu nombre">
+          <input type="text" name="name" placeholder="Tu email">
+          <input type="text" name="name" placeholder="Tu numero telefonico">
+          <textarea name="name" rows="8" cols="0" placeholder="Tu mensaje"></textarea>
+          <button type="button" name="button">Enviar</button>
+        </form>
+      </section>
+    </contact-form>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/stickyfill.min.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+
+    <script type="text/x-template" id="portfolio-item-template">
+      <span>
+        <article class="portfolio--item col-12_lg-12_md-12_sm-12_xs-12-middle" v-for="project in projects">
+          <section class="item grid">
+            <section class="item--preview col-6_lg-6_md-6_sm-12_xs-12-middle" v-bind:style="{ background : 'url(' + project.image + ') top center no-repeat' , backgroundSize: 'cover' , transition: 'transform 1s ease' }">
+              <span class="mask grid-middle"><a href="#">&#128279;</a></span>
+            </section>
+            <section class="item--description col-6_lg-6_md-6_sm-12_xs-12-middle" >
+              <h2>{{project.title}}</h2>
+              <p>
+                {{project.description}}
+              </p>
+              <button class="button inside-item"><a :href="project.url">Proyecto +</a></button> <button class="button inside-item"><a :href="project.github">Github +</a></button>
+              <section class="tags" >
+                <p v-for="tag in project.tags">{{tag}}</p>
+              </section>
+            </section>
+          </section>
+        </article>
+      </span>
+    </script>
+
+    <script type="text/javascript">
+      var portfolioItem = Vue.extend({
+        template: '#portfolio-item-template',
+        props: ['projects'],
+        data() {
+          return{
+          }
+        }
+      });
+
+      Vue.component('portfolio-items',portfolioItem);
+      new Vue({
+        el: '#app',
+        data: {
+          all: {}
+        },
+        mounted: function(){
+          var self = this;
+          var xobj = new XMLHttpRequest();
+          xobj.overrideMimeType("application/json");
+          xobj.open('GET', 'json/projects.json', true); // Replace 'my_data' with the path to your file
+
+          xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                  // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                  self.all = JSON.parse(xobj.responseText);
+                  console.log(self.all);
+                }
+          };
+          xobj.send(null);
+        }
+      });
+    </script>
+
+    <script type="text/javascript">
+    var header = document.getElementById('header');
+    Stickyfill.add(header);
+
+    function init() {
+      'use strict';
+      window.addEventListener('scroll', function(e){
+          var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+              shrinkOn = 500,
+              header = document.querySelector("#header");
+          if (distanceY > shrinkOn) {
+              classie.add(header,"smaller");
+          } else {
+              if (classie.has(header,"smaller")) {
+                  classie.remove(header,"smaller");
+              }
+          }
+      });
+    }
+    window.onload = init();
+    </script>
+  </body>
+</html>
