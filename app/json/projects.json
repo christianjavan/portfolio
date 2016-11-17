@@ -31,6 +31,22 @@
       "title": "YouTube Thumbs",
       "description": "Obtiene todas las imagenes, miniaturas y portadas de un video de YouTube a partir de una url valida.",
       "tags": ["Javascript", "html", "css", "boilerplate"]
+    },
+    {
+      "image": "images/thumbs/program-warmup.png",
+      "url": "https://play.google.com/store/apps/details?id=com.dev.christianjavan.warmuprepsbeta",
+      "github": "https://github.com/christianjavan/WarmUpRepsBeta",
+      "title": "Program WarmUp",
+      "description": "Calcula el numero de series y repeticiones y que peso usar para un calentamiento correcto previo al ejercicio principal enfocado a dos programas de ejercicio altamente populares.",
+      "tags": ["Java", "Android", "Android Studio"]
+    },
+    {
+      "image": "images/thumbs/estudio-elefante.png",
+      "url": "http://elefanteestudio.com/index.php",
+      "github": "#",
+      "title": "Elefante Estudio",
+      "description": "Sitio web de Estudio Elefante.",
+      "tags": ["Foundation-6", "Mobile First"]
     }
   ]
 }
