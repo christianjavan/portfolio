@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "image": "images/thumbs/garitas-thumb.png",
+      "url": "#",
+      "github": "https://github.com/christianjavan/Reporte-de-Garitas",
+      "title": "Reporte de Garitas",
+      "description": "Applicacion que da el reporte de garitas. Los datos son obtenidos a traves de una llamada Ajax al sitio del CBP, transforma un objeto XML en un objeto de Javascript para obtener un informe de los tiempos de espera en los cruces de San Ysidro y Otay. Esta aplicacion fue hecha utilizando Bootstrap y VueJs y Axios para hacer las llamadas Ajax.",
+      "tags": ["vuejs","javascript","html","css","axios", "CBP", "Garitas Tijuana"]
+    },
+    {
+      "image": "images/thumbs/clima.png",
+      "url": "#",
+      "github": "https://github.com/christianjavan/Reporte-del-Clima",
+      "title": "Reporte del Clima",
+      "description": "Aplicacion que obtiene un reporte del clima actual y de los siguientes cinco dias. La aplicacion fue hecha con VueJs y Axios para hacer las llamadas Ajax. El reporte se obtiene de la API de Open Weather Map, la localizacion se obtiene de la API de IpInfo.io que obtiene automaticamente la ciudad del cliente y hace el llamado a OWM para obtener el reporte del clima. Sin frameworK HTML/CSS.",
+    "tags": ["vuejs", "javascript", "html", "css", "axios", "GoogleMaps", "OpenWeatherMap"]
+    },
+    {
+      "image": "images/thumbs/instamap-thumb.png",
+      "url": "#",
+      "github": "https://github.com/christianjavan/instamap",
+      "title": "Instamap",
+      "description": "Aplicacion que obtiene imagenes de Instagram a partir de una localizacion especificada en un mapa de Google. La interfaz permite al usuario buscar una localizacion en un mapa o en un input cargado con la API de Google Maps con la capacidad de autocompletar la entrada del usuario, las coordenadas se obtienen automaticamente haciendo un llamado a la api de Geocoder de Google que carga un mapa de Google con dicha localizacion. Al hacer click derecho sobre el mapa el usuario obtiene las imagenes mas recientes que fueron tomadas cerca de dicha localizacion. El usuario puede escojer la distancia a la que desea encontrar imagenes. Utiliza JQuery para el Frontend.",
+      "tags": ["Javascript", "JQuery", "html", "css", "bootstrap"]
+    },
+    {
+      "image": "images/thumbs/youtube-thumb.png",
+      "url": "#",
+      "github": "https://github.com/christianjavan/YouTubeThumbsGetter",
+      "title": "YouTube Thumbs",
+      "description": "Obtiene todas las imagenes, miniaturas y portadas de un video de YouTube a partir de una url valida.",
+      "tags": ["Javascript", "html", "css", "boilerplate"]
+    }
+  ]
+}

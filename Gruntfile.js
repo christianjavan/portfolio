@@ -1,22 +1,25 @@
+
 module.exports = function (grunt){
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     app: 'app',
     dist: 'dist',
+    useminPrepare: {
+      html: 'app/index.html'
+    },
+    usemin: {
+      html: ['<%= dist %>/**/*.html', '<%= dist %>/**/*.php'],
+      css: ['<%= dist %>/css/**/*.css'],
+      options: {
+        dirs: ['<%= dist %>']
+      }
+    },
     /******************************************************/
     compass: {                  // Task
-      dist: {                   // Target
-        options: {              // Target options
-          sassDir: '<%= app %>/scss',
-          cssDir: '<%= dist %>/css',
-          environment: 'production'
-        }
-      },
       dev: {                    // Another target
         options: {
           sassDir: '<%= app %>/scss',
-          cssDir: '<%= app %>/css',
-          specify: '<%= app %>/scss/stylesheet.scss'
+          cssDir: '<%= app %>/css'
         }
       }
     },
@@ -54,33 +57,51 @@ module.exports = function (grunt){
     postcss: {
       options: {
         map: true, // inline sourcemaps
-
-        // or
-        map: {
-            inline: false, // save all sourcemaps as separate files...
-            annotation: 'dist/css/maps/' // ...to the specified directory
-        },
-
         processors: [
           require('pixrem')(), // add fallbacks for rem units
           require('autoprefixer')({  browsers: ['last 2 versions', 'ie >= 9', '> 5%'] }), // add vendor prefixes
           //require('cssnano')() // minify the result
         ]
       },
-      dev: {
-        src: '<%= app %>/**/*.css'
-      },
       dist: {
-        src: '<%= dist %>/**/*.css'
+        src: '<%= app %>/css/app.css'
       }
-    }
+    },
+    /************************************************************/
+    clean: {
+      dist: {
+        src: ["<%= dist %>/*"]
+      }
+    },
+    /**************************************************************/
+    copy: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= app %>/',
+          src: ['**/*.html', '**/*.php', '!**/*.scss','**/*.json','images/**/*'],
+          dest: '<%= dist %>/'
+        }]
+      }
+    },
+    /******************************************************************/
 
   });
+  /*Plugins de etapa de desarrollo*/
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
+  /*Plugins de etapa de distribucion*/
   grunt.loadNpmTasks('grunt-postcss');
-  grunt.registerTask('default', ['compass:dev','browserSync', 'watch']);
-  grunt.registerTask('publish', ['compass:dist']);
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-}
+  grunt.registerTask('compile-sass', ['compass', 'postcss']);
+  grunt.registerTask('default', ['compass:dev','browserSync', 'watch']);
+  grunt.registerTask('build', ['compile-sass','clean','useminPrepare','copy', 'concat','cssmin','uglify','usemin']);
+};
