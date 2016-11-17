@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <title>Christian Javan | Front End Developer</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
     <!-- build:css css/stylesheet.min.css -->
-    <link rel="stylesheet" href="css/stylesheet.css" media="screen" title="no title">
+    <link rel="stylesheet" href="css/stylesheet.css" title="no title">
     <!-- endbuild -->
   </head>
   <body>
@@ -31,7 +32,6 @@
       </section>
 
       <section class="portfolio grid">
-
         <portfolio-items :projects="all.projects"><portfolio-items>
       </section>
 
@@ -95,9 +95,9 @@
                 {{project.description}}
               </p>
               <button class="button inside-item"><a :href="project.url">Proyecto +</a></button> <button class="button inside-item"><a :href="project.github">Github +</a></button>
-              <section class="tags" >
-                <p v-for="tag in project.tags">{{tag}}</p>
-              </section>
+              <section class="tags">
+              <ul><li v-for="tag in project.tags">{{tag}}</li></ul>
+              <section>
             </section>
           </section>
         </article>
