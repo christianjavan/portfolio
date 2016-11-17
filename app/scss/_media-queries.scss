@@ -1,9 +1,10 @@
 @mixin device($point) {
 
-
-  $small-screen: "(min-width: 768px) ";
+  $xs-screen: "(min-width: 500px)";
+  $small-screen: "(min-width: 768px)";
   $medium-screen: "(min-width: 1000px)";
   $large-screen: "(min-width: 1200px)";
+
 
   @if $point == small-screen {
     @media #{$small-screen} { @content; }
@@ -13,6 +14,9 @@
   }
   @else if $point == large-screen {
     @media #{$large-screen} { @content; }
+  }
+  @else if $point == xs-screen {
+    @media #{$xs-screen} { @content; }
   }
 
 }
