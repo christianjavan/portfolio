@@ -1754,7 +1754,7 @@ contact-form {
   color: white;
   height: 500px;
   width: 320px;
-  transition: bottom 1s ease;
+  transition: all 1s ease;
 }
 /* line 327, ../scss/stylesheet.scss */
 contact-form .inputs {
@@ -1762,43 +1762,49 @@ contact-form .inputs {
   background-color: white;
   padding-top: 16px;
 }
-/* line 343, ../scss/stylesheet.scss */
+@media (min-width: 500px) {
+  /* line 325, ../scss/stylesheet.scss */
+  contact-form {
+    right: 20px;
+  }
+}
+/* line 347, ../scss/stylesheet.scss */
 contact-form ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: #777;
   opacity: .5;
 }
-/* line 347, ../scss/stylesheet.scss */
+/* line 351, ../scss/stylesheet.scss */
 contact-form :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #777;
   opacity: .5;
 }
-/* line 351, ../scss/stylesheet.scss */
+/* line 355, ../scss/stylesheet.scss */
 contact-form ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: #777;
   opacity: .5;
 }
-/* line 355, ../scss/stylesheet.scss */
+/* line 359, ../scss/stylesheet.scss */
 contact-form :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #fafafa;
   opacity: .5;
 }
-/* line 359, ../scss/stylesheet.scss */
+/* line 363, ../scss/stylesheet.scss */
 contact-form p, contact-form h2, contact-form input, contact-form button, contact-form textarea {
   margin: 0;
 }
-/* line 360, ../scss/stylesheet.scss */
+/* line 364, ../scss/stylesheet.scss */
 contact-form p {
   padding: 16px;
 }
-/* line 363, ../scss/stylesheet.scss */
+/* line 367, ../scss/stylesheet.scss */
 contact-form form {
   margin: 16px;
 }
-/* line 366, ../scss/stylesheet.scss */
+/* line 370, ../scss/stylesheet.scss */
 contact-form input, contact-form textarea {
   outline: none;
   border: none;
@@ -1809,15 +1815,15 @@ contact-form input, contact-form textarea {
   font-size: 1.3em;
   border-bottom: 1px solid #66BB6A;
 }
-/* line 376, ../scss/stylesheet.scss */
+/* line 380, ../scss/stylesheet.scss */
 contact-form input {
   height: 30px;
 }
-/* line 379, ../scss/stylesheet.scss */
+/* line 383, ../scss/stylesheet.scss */
 contact-form textarea {
   padding: 16px 0 0 0;
 }
-/* line 382, ../scss/stylesheet.scss */
+/* line 386, ../scss/stylesheet.scss */
 contact-form button {
   margin-top: 16px;
   width: 100%;
@@ -1828,7 +1834,7 @@ contact-form button {
   color: white;
 }
 
-/* line 394, ../scss/stylesheet.scss */
+/* line 398, ../scss/stylesheet.scss */
 .close-form {
   transition: all 1s ease;
   border-top-right-radius: 10px;
@@ -1842,12 +1848,12 @@ contact-form button {
   background-color: #f44336;
 }
 
-/* line 407, ../scss/stylesheet.scss */
+/* line 411, ../scss/stylesheet.scss */
 .show {
   opacity: 1;
 }
 
-/* line 412, ../scss/stylesheet.scss */
+/* line 416, ../scss/stylesheet.scss */
 .open-form {
   bottom: -45px;
 }

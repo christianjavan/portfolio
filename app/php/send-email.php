@@ -2,24 +2,43 @@
 
 error_reporting(-1);
 ini_set('display_errors', 'On');
-echo 'hola';
-//require_once 'PHPMailer-master/PHPMailerAutoload.php'
-require_once 'PHPMailer-master/class.smtp.php';
-require_once 'PHPMailer-master/class.phpmailer.php';
+
+  require ('PHPMailer-master/class.phpmailer.php');
+  require ('PHPMailer-master/class.smtp.php');
+
+  if(isset($_POST["nombre"]) && $_POST["email"] && $_POST["mensaje"]){
+    $nombre = $_POST["nombre"];
+    $email = $_POST["email"] ."";
+    $mensaje = $_POST["mensaje"];
+    if(isset($_POST["telefono"])){
+      $telefono = $_POST["telefono"];
+    }
+  }
 
 
-$mail = new PHPMailer();
-$mail -> Host = localhost;
+  require ('PHPMailer-master/PHPMailerAutoload.php');
 
-$mail -> From = 'email@tumadre.com';
-$mail -> AddAddress('christianjavan@hotmail.com');
-$mail -> Subject = 'prueba de correo';
-$mail ->Body = 'Hola. \n\n ESTO ES UNA PRUEBA DE CORREO.';
-if(!$mail -> Send()){
-  echo 'No se ha podido enviar el correo.';
-  echo 'Mailer error: ' . $mail ->ErrorInfo;
-} else{
-  echo 'Correo enviado exitosamente.';
-}
+  $mail = new PHPMailer;
+
+  $mail->SMTPDebug = 2;                               // Enable verbose debug output
+
+  $mail->isSMTP();
+  $mail->CharSet = 'utf-8';
+  $mail->SMTPAuth = false; // Enables SMTP authentication.
+  $mail->Host = "localhost";  // SMTP server host.
+
+  $mail->SetFrom($email, $nombre);
+  $mail->addAddress('christianjavan@hotmail.com', 'Christian Javan');     // Add a recipient
+  $mail->isHTML(true);                                  // Set email format to HTML
+
+  $mail->Subject = 'Contacto desde ChristianJavan.com';
+  $mail->Body    = $mensaje;
+  //$mail->AltBody = 'Gracias por su mensaje';
+
+  if(!$mail->send()) {
+      echo 'Mailer Error: ' . $mail->ErrorInfo;
+  } else {
+      echo 'exito';
+  }
 
  ?>

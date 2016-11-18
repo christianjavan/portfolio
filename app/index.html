@@ -62,24 +62,25 @@
 
     </footer>
     <div style="height:50px;"></div>
-    <contact-form  id="email">
+    <contact-form  id="contact-form">
       <p onclick="openEmailForm()">
         Contactame! Mandame un email!
       </p><span id="+" class="close-form" onclick="closeEmailForm()">&#10005;</span>
       <section class="inputs">
         <form class="" action="" method="">
-          <input type="text" name="name" placeholder="Tu nombre">
-          <input type="text" name="name" placeholder="Tu email">
-          <input type="text" name="name" placeholder="Tu numero telefonico">
-          <textarea name="name" rows="8" cols="0" placeholder="Tu mensaje"></textarea>
-          <button type="button" name="button">Enviar</button>
+          <input type="text" id="nombre" placeholder="Tu nombre">
+          <input type="text" id="email" placeholder="Tu email">
+          <input type="text" id="telefono" placeholder="Tu numero telefonico">
+          <textarea id="mensaje" rows="8" cols="0" placeholder="Tu mensaje"></textarea>
+          <button type="button" name="button" onclick="sendEmail()">Enviar</button>
         </form>
       </section>
     </contact-form>
     <!-- build:js js/scripts.min.css -->
-    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/axios.js"></script>
     <script type="text/javascript" src="js/stickyfill.min.js"></script>
     <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
     <!-- endbuild -->
 
     <script type="text/x-template" id="portfolio-item-template">

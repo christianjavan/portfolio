@@ -329,6 +329,10 @@ contact-form{
     background-color: white;
     padding-top: 16px;
   }
+  @include device(xs-screen){
+    right: 20px;
+  };
+
   font-family: 'Roboto';
   opacity: .95;
   background-color: $form-color;
@@ -339,7 +343,7 @@ contact-form{
   color: white;
   height: 500px;
   width: 320px;
-  transition: bottom 1s ease;
+  transition: all 1s ease;
   ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
       color:    #777;
       opacity: .5;

@@ -1,16 +1,33 @@
 function openEmailForm(){
-  if(document.getElementById("email").className != "open-form"){
-    document.getElementById("email").className += "open-form";
+  if(document.getElementById("contact-form").className != "open-form"){
+    document.getElementById("contact-form").className += "open-form";
     if(document.getElementById("+").className != " show")
       document.getElementById("+").className += " show";
   }
 
 }
 function closeEmailForm(){
-  document.getElementById("email").className = "";
+  document.getElementById("contact-form").className = "";
   document.getElementById("+").className = "close-form";
 }
 
+function sendEmail(){
+  var params = new URLSearchParams();
+
+  params.append('nombre', document.getElementById("nombre").value);
+  params.append('email', document.getElementById("email").value);
+  params.append('telefono', document.getElementById("telefono").value);
+  params.append('mensaje', document.getElementById("mensaje").value);
+
+  axios.post('php/send-email.php', params
+  )
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
 
 /*!
  * classie v1.0.0

@@ -41,7 +41,6 @@ module.exports = function (grunt){
           src: [
             '<%= app %>/**/*.css',
             '<%= app %>/**/*.html',
-            '<%= app %>/**/*.php',
             '<%= app %>/**/*.js',
             '<%= app %>/**/*.html',
             '<%= app %>/images/**/*.{jpg,gif,svg,jpeg,png}'
