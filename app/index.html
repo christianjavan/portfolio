@@ -17,7 +17,6 @@
       <section class="title">
         <h1 class="name">Christian Javan</h1>
         <p>Front End Developer</p>
-
       </section>
     </header>
 
@@ -62,26 +61,37 @@
 
     </footer>
     <div style="height:50px;"></div>
+
     <contact-form  id="contact-form">
-      <p onclick="openEmailForm()">
+      <p id="form-header-text" onclick="openEmailForm()">
         Contactame! Mandame un email!
       </p><span id="+" class="close-form" onclick="closeEmailForm()">&#10005;</span>
       <section class="inputs">
-        <form class="" action="" method="">
-          <input type="text" id="nombre" placeholder="Tu nombre">
-          <input type="text" id="email" placeholder="Tu email">
-          <input type="text" id="telefono" placeholder="Tu numero telefonico">
-          <textarea id="mensaje" rows="8" cols="0" placeholder="Tu mensaje"></textarea>
-          <button type="button" name="button" onclick="sendEmail()">Enviar</button>
+
+        <form id="mail-form">
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+          <input type="text" id="email" name="email" placeholder="Tu email">
+          <input type="text" id="telefono" name="telefono" placeholder="Tu numero telefonico">
+          <textarea id="mensaje" name="mensaje" rows="8" cols="0" placeholder="Tu mensaje"></textarea>
+          <button type="button" name="button" id="send-button" onclick="sendEmail()">Enviar</button>
         </form>
+
       </section>
     </contact-form>
+
     <!-- build:js js/scripts.min.css -->
     <script type="text/javascript" src="js/axios.js"></script>
     <script type="text/javascript" src="js/stickyfill.min.js"></script>
     <script type="text/javascript" src="js/vue.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <!-- endbuild -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("user_eaum39xSY01Chw3lIVr53");
+       })();
+    </script>
+
 
     <script type="text/x-template" id="portfolio-item-template">
       <span>
@@ -95,7 +105,7 @@
               <p>
                 {{project.description}}
               </p>
-              <button class="button inside-item"><a :href="project.url">Proyecto +</a></button> <button class="button inside-item"><a :href="project.github">Github +</a></button>
+              <button class="button inside-item"><a :href="project.url">Proyecto +</a></button> <span v-if="project.github != '#'"><button class="button inside-item"><a :href="project.github">Github +</a></button></span>
               <section class="tags">
               <ul><li v-for="tag in project.tags">{{tag}}</li></ul>
               <section>
@@ -131,7 +141,7 @@
                 if (xobj.readyState == 4 && xobj.status == "200") {
                   // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
                   self.all = JSON.parse(xobj.responseText);
-                  console.log(self.all);
+                  //console.log(self.all);
                 }
           };
           xobj.send(null);

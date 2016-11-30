@@ -1857,3 +1857,8 @@ contact-form button {
 .open-form {
   bottom: -45px;
 }
+
+/* line 420, ../scss/stylesheet.scss */
+.background-error {
+  background-color: #f44336;
+}
