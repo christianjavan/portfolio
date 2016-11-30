@@ -1862,3 +1862,42 @@ contact-form button {
 .background-error {
   background-color: #f44336;
 }
+
+/* line 425, ../scss/stylesheet.scss */
+.conocimientos {
+  background-color: #fafafa;
+}
+/* line 427, ../scss/stylesheet.scss */
+.conocimientos ul {
+  padding: 0;
+  list-style: none;
+}
+/* line 431, ../scss/stylesheet.scss */
+.conocimientos p {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* line 436, ../scss/stylesheet.scss */
+.margin-auto {
+  margin: 0 auto;
+}
+
+/* line 441, ../scss/stylesheet.scss */
+.center-text {
+  text-align: center;
+}
+
+/* line 445, ../scss/stylesheet.scss */
+.front-end-knowledge, .back-end-knowledge {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ddd;
+}
+/* line 448, ../scss/stylesheet.scss */
+.front-end-knowledge p, .back-end-knowledge p {
+  font-weight: bold;
+}
+
+/* line 453, ../scss/stylesheet.scss */
+.back-end-knowledge {
+  margin-bottom: 20px;
+}

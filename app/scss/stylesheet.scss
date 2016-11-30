@@ -420,3 +420,36 @@ contact-form{
 .background-error{
   background-color: #f44336;
 }
+
+
+.conocimientos{
+  background-color: #fafafa;
+  ul{
+    padding: 0;
+    list-style: none;
+  }
+  p{
+    font-family:'Roboto', sans-serif;
+  }
+}
+
+.margin-auto{
+  margin: 0 auto;
+}
+
+
+.center-text{
+  text-align: center;
+}
+
+.front-end-knowledge, .back-end-knowledge{
+  font-family:'Roboto', sans-serif;
+  background-color: #ddd;
+  p{
+    font-weight: bold;
+  }
+}
+
+.back-end-knowledge{
+  margin-bottom: 20px;
+}

@@ -67,7 +67,7 @@
     {
       "image": "images/thumbs/christianjavan.PNG",
       "url": "http://www.christianjavan.com/",
-      "github": "#",
+      "github": "https://github.com/christianjavan/portfolio",
       "title": "Christian Javan Portafolio",
       "description": "Mi propio sitio web. Utiliza VueJS como motor de FrontEnd, GridLex como sistema de grid de css, la lista de proyectos es llamada con Ajax a un documento json alojado en este servidor, utiliza EmailJS como gestor de envio de correos y no utiliza JQuery, por lo que el Javascript utilizado es mayormente Vanilla.",
       "tags": ["VueJS", "Gridlex", "Axios", "EmailJS"]
