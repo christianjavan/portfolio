@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-      "image": "images/thumbs/garitas-thumb.png",
+      "image": "images/thumbs/garitas-thumb.PNG",
       "url": "http://christianjavan.com/proyectos/garitastj/",
       "github": "https://github.com/christianjavan/Reporte-de-Garitas",
       "title": "Reporte de Garitas",
@@ -9,7 +9,7 @@
       "tags": ["vuejs","javascript","html","css","axios", "CBP", "Garitas Tijuana"]
     },
     {
-      "image": "images/thumbs/clima.png",
+      "image": "images/thumbs/clima.PNG",
       "url": "http://christianjavan.com/proyectos/clima/",
       "github": "https://github.com/christianjavan/Reporte-del-Clima",
       "title": "Reporte del Clima",
@@ -17,7 +17,7 @@
     "tags": ["vuejs", "javascript", "html", "css", "axios", "GoogleMaps", "OpenWeatherMap"]
     },
     {
-      "image": "images/thumbs/instamap-thumb.png",
+      "image": "images/thumbs/instamap-thumb.PNG",
       "url": "http://christianjavan.com/proyectos/instamap/",
       "github": "https://github.com/christianjavan/instamap",
       "title": "Instamap",
@@ -25,7 +25,7 @@
       "tags": ["Javascript", "JQuery", "html", "css", "bootstrap"]
     },
     {
-      "image": "images/thumbs/youtube-thumb.png",
+      "image": "images/thumbs/youtube-thumb.PNG",
       "url": "http://christianjavan.com/proyectos/youtubethumbs/",
       "github": "https://github.com/christianjavan/YouTubeThumbsGetter",
       "title": "YouTube Thumbs",
@@ -33,7 +33,7 @@
       "tags": ["Javascript", "html", "css", "boilerplate"]
     },
     {
-      "image": "images/thumbs/program-warmup.png",
+      "image": "images/thumbs/program-warmup.PNG",
       "url": "https://play.google.com/store/apps/details?id=com.dev.christianjavan.warmuprepsbeta",
       "github": "https://github.com/christianjavan/WarmUpRepsBeta",
       "title": "Program WarmUp",
@@ -41,12 +41,36 @@
       "tags": ["Java", "Android", "Android Studio"]
     },
     {
-      "image": "images/thumbs/estudio-elefante.png",
+      "image": "images/thumbs/estudio-elefante.PNG",
       "url": "http://elefanteestudio.com/index.php",
       "github": "#",
       "title": "Elefante Estudio",
       "description": "Sitio web de Estudio Elefante.",
       "tags": ["Foundation-6", "Mobile First"]
+    },
+    {
+      "image": "images/thumbs/conortrald.PNG",
+      "url": "http://conortrald.com/",
+      "github": "#",
+      "title": "CONORTRALD",
+      "description": "Sitio web de CONORTRALD hecho en WordPress con tema profesional e integrado con multiples plugins.",
+      "tags": ["Wordpress", "Aeolus"]
+    },
+    {
+      "image": "images/thumbs/gltlogistics.PNG",
+      "url": "http://www.gltlogistics.com/",
+      "github": "#",
+      "title": "Global Trade Logistics",
+      "description": "Sitio web de Global Trade Logistics hecho en WordPress con tema profesional e integrado con multiples plugins..",
+      "tags": ["Wordpress"]
+    },
+    {
+      "image": "images/thumbs/christianjavan.PNG",
+      "url": "http://www.christianjavan.com/",
+      "github": "#",
+      "title": "Christian Javan Portafolio",
+      "description": "Mi propio sitio web. Utiliza VueJS como motor de FrontEnd, GridLex como sistema de grid de css, la lista de proyectos es llamada con Ajax a un documento json alojado en este servidor, utiliza EmailJS como gestor de envio de correos y no utiliza JQuery, por lo que el Javascript utilizado es mayormente Vanilla.",
+      "tags": ["VueJS", "Gridlex", "Axios", "EmailJS"]
     }
   ]
 }
